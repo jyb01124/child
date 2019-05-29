@@ -66,22 +66,49 @@ with requests.Session() as s:
 
     main_bs = bs(main_parser, 'html.parser')
     Main_list = main_bs.find_all("tr")
-    main_num = len(Main_list)
+    main_num = len(Main_list) + 1
     Main = []
 
-
     for paragraph, cnt in zip(Main_list, range(main_num)):
-        root = None
-        save = []
+        if cnt == 0:
+            continue
+
         process = bs(str(paragraph), 'html.parser')
-        try:
-            root = str(process.find("th", class_="left_none").get_text())
-        except AttributeError:
-            pass
-        if root != None:
-            pass
+        start_level_list = process.find_all("th")
+
+        for parser in start_level_list:
+            One = bs(str(parser), 'html.parser')
+            if One.find(class_=True) != None:
+                print("구분")
+                print(One.get_text())
+            else:
+                print("영역")
+                print(One.get_text())
+        
+        b_parser = bs(str(process.find("h4")), 'html.parser').find("a")
+        
+        A = b_parser.get_text()
+        B = "http://www.kidkids.net" + str(b_parser.get("href"))
+        
+        print(A,B)
+        
+
+                
+
+        
+        
+
+
+
+        #try:
+            #root = str(process.find("th", class_="left_none").get_text())
+        #except AttributeError:
+        #    pass
+        #if root != None:
+        #    pass
 
         print("---------------------------------")
-        print(cnt)
-        print(root)
+        #print(cnt)
+        #print(start_level_list)
+        #print(root)
         #print(paragraph)
