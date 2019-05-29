@@ -69,46 +69,66 @@ with requests.Session() as s:
     main_num = len(Main_list) + 1
     Main = []
 
+    gubun = 0
+    young = 0
+
+    gubun_list = []
+    young_list = []
+    address_list = []
+
     for paragraph, cnt in zip(Main_list, range(main_num)):
         if cnt == 0:
             continue
 
         process = bs(str(paragraph), 'html.parser')
         start_level_list = process.find_all("th")
+        b_parser = bs(str(process.find("h4")), 'html.parser').find("a")
 
         for parser in start_level_list:
             One = bs(str(parser), 'html.parser')
             if One.find(class_=True) != None:
-                print("구분")
-                print(One.get_text())
+                gubun_list.append(One.get_text())
+                gubun += 1
+
+                young = 0
+                tmp = []
+
+                try:
+                    young_list.append(tmp)
+                except NameError:
+                    pass
             else:
-                print("영역")
-                print(One.get_text())
-        
-        b_parser = bs(str(process.find("h4")), 'html.parser').find("a")
-        
+                tmp.append(One.get_text())
+                young += 1
+
+        print("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz")
+        print("구분 : {}".format(gubun))
+        print("영역 : {}".format(young))
         A = b_parser.get_text()
         B = "http://www.kidkids.net" + str(b_parser.get("href"))
-        
-        print(A,B)
-        
+        print(A)
+        print("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz")
 
-                
+        if (gubun == 1) and (young == 1):
+            tmp_2 = []
 
-        
-        
+        tmp_2.append([A])
+        print(tmp_2)
+
+        if (young == 1) or (young == 0):
+            try:
+                address_list.append(tmp_2)
+            except NameError:
+                pass
 
 
 
-        #try:
-            #root = str(process.find("th", class_="left_none").get_text())
-        #except AttributeError:
-        #    pass
-        #if root != None:
-        #    pass
 
-        print("---------------------------------")
-        #print(cnt)
-        #print(start_level_list)
-        #print(root)
-        #print(paragraph)
+
+
+
+
+
+print(gubun_list)
+print(young_list)
+print(address_list)
