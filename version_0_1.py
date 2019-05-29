@@ -27,7 +27,7 @@ LOGIN_INFO = {
     'pw': 'sjcd0326'
 }
 
-for i in range(1, day[M] + 1):  
+for i in range(1, day[M] + 1):
     pass
 with requests.Session() as s:
     first_page = s.get('http://www.kidkids.net')
@@ -51,11 +51,37 @@ with requests.Session() as s:
     html_scd = second_page.content
     soup_scd = bs(html_scd, 'html.parser')
 
-    header_parser = soup_scd.find("table", attrs={"class": "ep_info"})
-    main_parser = soup_scd.find("table", attrs={"class": "plan_table mgtop_low"})
-
-    print(header_parser)
-    print(main_parser)
+    header_parser = str(soup_scd.find("table", attrs={"class": "ep_info"}))
+    main_parser = str(soup_scd.find("table", attrs={"class": "plan_table mgtop_low"}))
 
     header_bs = bs(header_parser, 'html.parser')
+    Header_list = header_bs.find_all("tr")
+    Header = []
+
+    for paragraph in Header_list:
+        process = bs(str(paragraph),'html.parser')
+        title = str(process.find("th").get_text())
+        contents = str(process.find("td").get_text()).replace("\t","").replace("\n","").replace("\r",", ")
+        Header.append([title, contents])
+
     main_bs = bs(main_parser, 'html.parser')
+    Main_list = main_bs.find_all("tr")
+    main_num = len(Main_list)
+    Main = []
+
+
+    for paragraph, cnt in zip(Main_list, range(main_num)):
+        root = None
+        save = []
+        process = bs(str(paragraph), 'html.parser')
+        try:
+            root = str(process.find("th", class_="left_none").get_text())
+        except AttributeError:
+            pass
+        if root != None:
+            pass
+
+        print("---------------------------------")
+        print(cnt)
+        print(root)
+        #print(paragraph)
