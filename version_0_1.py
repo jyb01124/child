@@ -3,7 +3,8 @@
 import requests
 from bs4 import BeautifulSoup as bs
 import time
-import codecs
+from tree import Tree
+import pandas as pd
 import sys
 
 print(sys.version)
@@ -52,8 +53,6 @@ with requests.Session() as s:
     soup_scd = bs(html_scd, 'html.parser')
 
     header_parser = str(soup_scd.find("table", attrs={"class": "ep_info"}))
-    main_parser = str(soup_scd.find("table", attrs={"class": "plan_table mgtop_low"}))
-
     header_bs = bs(header_parser, 'html.parser')
     Header_list = header_bs.find_all("tr")
     Header = []
@@ -63,6 +62,53 @@ with requests.Session() as s:
         title = str(process.find("th").get_text())
         contents = str(process.find("td").get_text()).replace("\t","").replace("\n","").replace("\r",", ")
         Header.append([title, contents])
+
+#--------------------------------------------------------------------------------------------------------------
+
+    main_parser = str(soup_scd.find("table", attrs={"class": "plan_table mgtop_low"}))
+    first = bs(main_parser,'html.parser').find("th", class_="left_none")
+    first_span = first.get('rowspan')
+    tmp = first.find_next("th")
+    while True:
+        if tmp.get('class') != None:
+            break
+        tmp_num = tmp.get('rowspan')
+        if tmp_num == 1:
+
+    print()
+    print(first.find_next("th").get('rowspan'))
+    print(first.find_next("h4").get_text())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
 
     main_bs = bs(main_parser, 'html.parser')
     Main_list = main_bs.find_all("tr")
@@ -76,12 +122,15 @@ with requests.Session() as s:
     young_list = []
     address_list = []
 
+    past = 0
+    present = 0
+
     for paragraph, cnt in zip(Main_list, range(main_num)):
         
         if cnt == 0:
             continue
 
-        needs = bs(str(paragraph),'html.parser')
+        needs = bs(str(paragraph), 'html.parser')
 
         th = needs.find_all('th')
         th_num = len(th)
@@ -96,10 +145,12 @@ with requests.Session() as s:
         #a_num = len(a)
 
         print("th_num: {}".format(th_num))
+
+
         #print("a_num: {}".format(a_num))
 
 
-
+'''
 
 
 
