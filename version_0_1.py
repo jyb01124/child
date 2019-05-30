@@ -77,9 +77,36 @@ with requests.Session() as s:
     address_list = []
 
     for paragraph, cnt in zip(Main_list, range(main_num)):
+        
         if cnt == 0:
             continue
 
+        needs = bs(str(paragraph),'html.parser')
+
+        th = needs.find_all('th')
+        th_num = len(th)
+
+        h4 = needs.find_all('h4', style="margin-bottom:5px;")
+        for h4_indi in h4:
+            a = bs(str(h4_indi),'html.parser').find('a')
+            a_address = a.get('href')
+            a_text = a.get_text()
+            #print(a_text)
+            #print(a_address)
+        #a_num = len(a)
+
+        print("th_num: {}".format(th_num))
+        #print("a_num: {}".format(a_num))
+
+
+
+
+
+
+
+
+
+'''
         process = bs(str(paragraph), 'html.parser')
         start_level_list = process.find_all("th")
         b_parser = bs(str(process.find("h4")), 'html.parser').find("a")
@@ -111,13 +138,17 @@ with requests.Session() as s:
 
         if (gubun == 1) and (young == 1):
             tmp_2 = []
-
-        tmp_2.append([A])
-        print(tmp_2)
+            
+        try:
+            tmp_2.append([A])
+            print(tmp_2)
+        except:
+            pass
 
         if (young == 1) or (young == 0):
             try:
                 address_list.append(tmp_2)
+                tmp_2 = []
             except NameError:
                 pass
 
@@ -129,6 +160,8 @@ with requests.Session() as s:
 
 
 
-print(gubun_list)
-print(young_list)
+#print(gubun_list)
+#print(young_list)
 print(address_list)
+
+'''
