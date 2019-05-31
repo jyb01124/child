@@ -4,14 +4,15 @@ import requests
 from bs4 import BeautifulSoup as bs
 import time
 from tree import Tree
-import pandas as pd
 import sys
 
 print(sys.version)
 Age = 5
 Y = time.localtime().tm_year
-M = time.localtime().tm_mon
-D = time.localtime().tm_mday
+#M = time.localtime().tm_mon
+M=5
+#D = time.localtime().tm_mday
+D=31
 
 day = [31,28,31,30,31,30,31,31,30,31,30,31]
 
@@ -65,17 +66,101 @@ with requests.Session() as s:
 
 #--------------------------------------------------------------------------------------------------------------
 
-    main_parser = str(soup_scd.find("table", attrs={"class": "plan_table mgtop_low"}))
+    main_parser = str(bs(str(soup_scd.find("table", attrs={"class": "plan_table mgtop_low"})), 'html.parser').find("tbody", class_="th_normal"))
+    line_split = main_parser.split("\n")
+    line_list = []
+
+    for readline in line_split:
+        if (readline.find("<th ") == 0) or (readline.find("<h4 ") == 0):
+            readline = readline.replace('<h4 style="margin-bottom:5px;">' , '')
+            line_list.append(readline)
+
+    front = line_list[0].find("</th>") 
+    back_string = "<th "
+    space = " "
+    locate = 0
+
+    for space_num in range(10):
+        locate = line_list[0].find(">" + back_string)
+        if locate != -1:
+            break
+        back_string = space + back_string
+
+    rtn = (">" + back_string).replace("th ","")
+
+    for value in line_list:
+        INDEX = line_list.index(value)
+
+        if value.find(rtn) == -1:
+            continue
+        tmp = value.split(rtn)
+        del line_list[INDEX]
+        line_list.insert(INDEX, tmp[0]+">")
+        line_list.insert(INDEX+1, "<"+tmp[1])
+
+    for ii in line_list:        
+        A = bs(ii,'html.parser')
+        A.
+    
+
+
+
+    '''
+                readlines = readline.split('> <')
+            if len(readlines) == 2:
+                line_list.append(readlines[0] + ">")
+                line_list.append("<" + readlines[1])
+            elif len(readlines) == 1:
+                line_list.append(readline)
+    '''
+    
+
+
+    
+
+
+
+
+'''
+
+main_parser = bs(main_parser, 'html.parser')
+
+    root = main_parser.find("th", class_="left_none")
+    week_root = None
+    week_week_root = None
+
+    past = None
+    present = None
+
+    present = root
+
+    if present.find_next("th").get('class') == None:
+        print("소주제")
+        week_root = present.find_next("th")
+        past = present
+        present = week_root
+    else:
+        print("주제")
+        root = present.find_next("th")
+        past = present
+        present = root
+        continue
+    
+    if present.find_next()
+    
+    print(root.find_next("h4"))
+
     first = bs(main_parser,'html.parser').find("th", class_="left_none")
     first_span = first.get('rowspan')
+
     tmp = first.find_next("th")
     while True:
         if tmp.get('class') != None:
             break
         tmp_num = tmp.get('rowspan')
         if tmp_num == 1:
+            pass
 
-    print()
     print(first.find_next("th").get('rowspan'))
     print(first.find_next("h4").get_text())
 
@@ -83,7 +168,7 @@ with requests.Session() as s:
 
 
 
-
+'''
 
 
 
