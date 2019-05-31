@@ -55,11 +55,11 @@ with requests.Session() as s:
     header_parser = soup_scd.find("table", attrs={"class": "ep_info"})
     main_parser = soup_scd.find("table", attrs={"class": "plan_table mgtop_low"})
 
-    print(header_parser)
-    print(main_parser)
+    #print(header_parser)
+    #print(main_parser)
 
 
-'''
+
     A = soup_scd.find("table", attrs={"summary": "일간교육계획안 정보"}).find_all("th")
     B = soup_scd.find("table", attrs={"summary": "일간교육계획안 정보"}).find_all("td")
 
@@ -139,7 +139,9 @@ f.write("\n과학 영역 : " + str(title['자유선택활동'][7]['과학영역'
 f.write(str(title['자유선택활동'][7]['과학영역'][2])+"\n")
 f.write("\n")
 f.write("대소집단활동 : ")
-f.write("\n이야기 나누기 : " + str(title['대소집단활동'][0]['이야기나누기'][0])+"\n")
+print("--------------------------------------")
+print()
+f.write("\n이야기 나누기 : " + str(title['대소집단활동'][0][list(title['대소집단활동'][0].keys())[0]][0])+"\n")
 f.write(str(title['대소집단활동'][0]['이야기나누기'][2])+"\n")
 f.write("\n음악 : " + str(title['대소집단활동'][1]['음악'][0])+"\n")
 f.write(str(title['대소집단활동'][1]['음악'][2])+"\n")
@@ -154,4 +156,4 @@ f.write(str(title['실외놀이'][1]['실외대체'][2])+"\n")
 
 f.close()
 
-'''
+
