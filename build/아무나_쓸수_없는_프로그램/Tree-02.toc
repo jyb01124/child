@@ -1,0 +1,429 @@
+('c:\\program '
+ 'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg',
+ None,
+ {'*.pyd', '*.cp36-win_amd64.pyd', '*.pyc', '*.pyw', 'EGG-INFO', '*.py'},
+ 'DATA',
+ [('lxml\\etree.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\etree.h',
+   'DATA'),
+  ('lxml\\etree_api.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\etree_api.h',
+   'DATA'),
+  ('lxml\\lxml.etree.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\lxml.etree.h',
+   'DATA'),
+  ('lxml\\lxml.etree_api.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\lxml.etree_api.h',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\RNG2Schtrn.xsl',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\isoschematron\\resources\\xsl\\RNG2Schtrn.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\XSD2Schtrn.xsl',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\isoschematron\\resources\\xsl\\XSD2Schtrn.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_abstract_expand.xsl',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_abstract_expand.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_dsdl_include.xsl',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_dsdl_include.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_schematron_message.xsl',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_schematron_message.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_schematron_skeleton_for_xslt1.xsl',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_schematron_skeleton_for_xslt1.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_svrl_for_xslt1.xsl',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_svrl_for_xslt1.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\readme.txt',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\readme.txt',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\rng\\iso-schematron.rng',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\isoschematron\\resources\\rng\\iso-schematron.rng',
+   'DATA'),
+  ('lxml\\includes\\c14n.pxd',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\c14n.pxd',
+   'DATA'),
+  ('lxml\\includes\\config.pxd',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\config.pxd',
+   'DATA'),
+  ('lxml\\includes\\dtdvalid.pxd',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\dtdvalid.pxd',
+   'DATA'),
+  ('lxml\\includes\\etreepublic.pxd',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\etreepublic.pxd',
+   'DATA'),
+  ('lxml\\includes\\etree_defs.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\etree_defs.h',
+   'DATA'),
+  ('lxml\\includes\\htmlparser.pxd',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\htmlparser.pxd',
+   'DATA'),
+  ('lxml\\includes\\lxml-version.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\lxml-version.h',
+   'DATA'),
+  ('lxml\\includes\\relaxng.pxd',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\relaxng.pxd',
+   'DATA'),
+  ('lxml\\includes\\schematron.pxd',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\schematron.pxd',
+   'DATA'),
+  ('lxml\\includes\\tree.pxd',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\tree.pxd',
+   'DATA'),
+  ('lxml\\includes\\uri.pxd',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\uri.pxd',
+   'DATA'),
+  ('lxml\\includes\\xinclude.pxd',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\xinclude.pxd',
+   'DATA'),
+  ('lxml\\includes\\xmlerror.pxd',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\xmlerror.pxd',
+   'DATA'),
+  ('lxml\\includes\\xmlparser.pxd',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\xmlparser.pxd',
+   'DATA'),
+  ('lxml\\includes\\xmlschema.pxd',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\xmlschema.pxd',
+   'DATA'),
+  ('lxml\\includes\\xpath.pxd',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\xpath.pxd',
+   'DATA'),
+  ('lxml\\includes\\xslt.pxd',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\xslt.pxd',
+   'DATA'),
+  ('lxml\\includes\\__init__.pxd',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\__init__.pxd',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\attributes.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\attributes.h',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\documents.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\documents.h',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\extensions.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\extensions.h',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\extra.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\extra.h',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\functions.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\functions.h',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\imports.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\imports.h',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\keys.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\keys.h',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\libxslt.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\libxslt.h',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\namespaces.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\namespaces.h',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\numbersInternals.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\numbersInternals.h',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\preproc.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\preproc.h',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\security.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\security.h',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\templates.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\templates.h',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\transform.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\transform.h',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\trio.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\trio.h',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\triodef.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\triodef.h',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\variables.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\variables.h',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\win32config.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\win32config.h',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\xslt.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\xslt.h',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\xsltconfig.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\xsltconfig.h',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\xsltexports.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\xsltexports.h',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\xsltInternals.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\xsltInternals.h',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\xsltlocale.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\xsltlocale.h',
+   'DATA'),
+  ('lxml\\includes\\libxslt\\xsltutils.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxslt\\xsltutils.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\c14n.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\c14n.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\catalog.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\catalog.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\chvalid.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\chvalid.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\debugXML.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\debugXML.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\dict.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\dict.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\DOCBparser.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\DOCBparser.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\encoding.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\encoding.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\entities.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\entities.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\globals.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\globals.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\hash.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\hash.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\HTMLparser.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\HTMLparser.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\HTMLtree.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\HTMLtree.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\list.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\list.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\nanoftp.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\nanoftp.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\nanohttp.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\nanohttp.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\parser.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\parser.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\parserInternals.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\parserInternals.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\pattern.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\pattern.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\relaxng.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\relaxng.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\SAX.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\SAX.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\SAX2.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\SAX2.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\schemasInternals.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\schemasInternals.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\schematron.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\schematron.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\threads.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\threads.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\tree.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\tree.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\uri.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\uri.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\valid.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\valid.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\xinclude.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\xinclude.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\xlink.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\xlink.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\xmlautomata.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\xmlautomata.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\xmlerror.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\xmlerror.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\xmlexports.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\xmlexports.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\xmlIO.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\xmlIO.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\xmlmemory.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\xmlmemory.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\xmlmodule.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\xmlmodule.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\xmlreader.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\xmlreader.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\xmlregexp.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\xmlregexp.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\xmlsave.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\xmlsave.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\xmlschemas.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\xmlschemas.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\xmlschemastypes.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\xmlschemastypes.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\xmlstring.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\xmlstring.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\xmlunicode.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\xmlunicode.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\xmlversion.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\xmlversion.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\xmlwriter.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\xmlwriter.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\xpath.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\xpath.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\xpathInternals.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\xpathInternals.h',
+   'DATA'),
+  ('lxml\\includes\\libxml\\xpointer.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libxml\\xpointer.h',
+   'DATA'),
+  ('lxml\\includes\\libexslt\\exslt.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libexslt\\exslt.h',
+   'DATA'),
+  ('lxml\\includes\\libexslt\\exsltconfig.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libexslt\\exsltconfig.h',
+   'DATA'),
+  ('lxml\\includes\\libexslt\\exsltexports.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libexslt\\exsltexports.h',
+   'DATA'),
+  ('lxml\\includes\\libexslt\\libexslt.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\lxml-4.3.3-py3.6-win-amd64.egg\\lxml\\includes\\libexslt\\libexslt.h',
+   'DATA')])

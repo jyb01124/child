@@ -1,0 +1,21 @@
+('c:\\program '
+ 'files\\python36\\lib\\site-packages\\cffi-1.12.3-py3.6-win-amd64.egg',
+ None,
+ {'*.pyd', '*.cp36-win_amd64.pyd', '*.pyc', '*.pyw', 'EGG-INFO', '*.py'},
+ 'DATA',
+ [('cffi\\parse_c_type.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\cffi-1.12.3-py3.6-win-amd64.egg\\cffi\\parse_c_type.h',
+   'DATA'),
+  ('cffi\\_cffi_errors.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\cffi-1.12.3-py3.6-win-amd64.egg\\cffi\\_cffi_errors.h',
+   'DATA'),
+  ('cffi\\_cffi_include.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\cffi-1.12.3-py3.6-win-amd64.egg\\cffi\\_cffi_include.h',
+   'DATA'),
+  ('cffi\\_embedding.h',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\cffi-1.12.3-py3.6-win-amd64.egg\\cffi\\_embedding.h',
+   'DATA')])

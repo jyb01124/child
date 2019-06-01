@@ -4,12 +4,52 @@ import requests
 from bs4 import BeautifulSoup as bs
 import datetime
 import configparser
-import os
+import os, sys, time
 
+TODAY = datetime.date.today()
 config = configparser.RawConfigParser()
+
+if os.path.isfile('output.cfg') == False:
+    config.add_section('kidskids')
+
+    config.set('kidskids', 'id', 'id')
+    config.set('kidskids', 'pw', 'pw')
+    config.set('kidskids','age', 'age')
+    config.set('kidskids','month', 'month')
+
+    with open('output.cfg', 'w') as configfile:
+        config.write(configfile)
+
+    print("output.cfg 파일을 열어 키드키즈의 ID와 PW를 입력해주세요")
+    time.sleep(3)
+    sys.exit(1)
+
 config.read('output.cfg')
-Age = int(config.get('kidskids','age'))
-M = int(config.get('kidskids','month'))
+ID = config.get('kidskids','id')
+PW = config.get('kidskids','pw')
+Age = config.get('kidskids','age')
+M = config.get('kidskids','month')
+
+exit = 0
+if ID == "id":
+    print("output.cfg 파일의 id 항목을 새롭게 입력해주세요")
+    exit = 1
+
+if PW == "pw":
+    print("output.cfg 파일의 pw 항목을 새롭게 입력해주세요")
+    exit = 1
+
+if Age == "age":
+    print("output.cfg 파일의 age 항목을 새롭게 입력해주세요")
+    exit = 1
+
+if M == "month":
+    print("output.cfg 파일의 month 항목을 새롭게 입력해주세요")
+    exit = 1
+
+if exit == 1:
+    time.sleep(3)
+    sys.exit(1)
 
 TODAY = datetime.date.today()
 
@@ -27,12 +67,9 @@ for i in range(month_daynum[M-1]):
         continue
     month_day.append(i+1)
 
-if os.path.isdir("./output") == False:
-    os.makedirs("./output")
-
 LOGIN_INFO = {
-    'member_id': 'sj0326',
-    'pw': 'sjcd0326'
+    'member_id': ID,
+    'pw': PW
 }
 
 s = requests.Session()
@@ -48,13 +85,16 @@ LOGIN_INFO["refererURL"] = refererURL["value"]
 
 login_req = s.post('https://www.kidkids.net/regist/login_ck_file.php', data=LOGIN_INFO)
 if login_req.status_code == 200:
-    print("OK")
+    print("Login Success")
+else:
+    print("Login Fail")
+    sys.exit(1)
 
 for Day in month_day:
     D = Day
     file_name = "./output/" + str(Y)+"-"+str(M)+"-"+str(D)+".txt"
     f = open(file_name, "w")
-    print(file_name)
+    print(str(Y)+"년 "+str(M)+"월 "+str(D)+"일 의 자료를 output 폴더로 출력하고 있습니다.")
 
     base_string =  "http://www.kidkids.net/eduinfo_new/eduplan_day.htm?"
     age_string = "CUR_AGE="+str(Age)+"&"
@@ -212,4 +252,5 @@ for Day in month_day:
 
         f.write("\n")
 
+    print(str(Y) + "년 " + str(M) + "월 " + str(D) + "일 의 자료 출력성공")
     f.close()
