@@ -2,51 +2,67 @@
 
 import requests
 from bs4 import BeautifulSoup as bs
-import time
-from tree import Tree
-import sys
+import datetime
+import configparser
+import os
 
-print(sys.version)
-Age = 5
-Y = time.localtime().tm_year
-#M = time.localtime().tm_mon
-M=5
-#D = time.localtime().tm_mday
-D=31
+config = configparser.RawConfigParser()
+config.read('output.cfg')
+Age = int(config.get('kidskids','age'))
+M = int(config.get('kidskids','month'))
 
-day = [31,28,31,30,31,30,31,31,30,31,30,31]
+TODAY = datetime.date.today()
 
-base_string =  "http://www.kidkids.net/eduinfo_new/eduplan_day.htm?"
-age_string = "CUR_AGE="+str(Age)+"&"
-y_string = "SEL_YEAR="+str(Y)+"&"
-m_string = "CUR_MONTH="+str(M)+"&"
-d_string = "CUR_DAY="+str(D)+"&"
+Y = int(TODAY.year)
+#M = TODAY.month
+#D = TODAY.day
 
+month_daynum = [31,28,31,30,31,30,31,31,30,31,30,31]
+month_day = []
 
+for i in range(month_daynum[M-1]):
+    weekend_num = int(datetime.date(Y,M,i+1).weekday())
+
+    if (weekend_num == 5) or (weekend_num == 6):
+        continue
+    month_day.append(i+1)
+
+if os.path.isdir("./output") == False:
+    os.makedirs("./output")
 
 LOGIN_INFO = {
     'member_id': 'sj0326',
     'pw': 'sjcd0326'
 }
 
-for i in range(1, day[M] + 1):
-    pass
-with requests.Session() as s:
-    first_page = s.get('http://www.kidkids.net')
-    html = first_page.text
-    soup = bs(html, 'html.parser')
+s = requests.Session()
+first_page = s.get('http://www.kidkids.net')
+html = first_page.text
+soup = bs(html, 'html.parser')
 
-    enc_key = soup.find(attrs={"name": "enc_key"})
-    refererURL = soup.find(attrs={"name": "refererURL"})
+enc_key = soup.find(attrs={"name": "enc_key"})
+refererURL = soup.find(attrs={"name": "refererURL"})
 
-    LOGIN_INFO["enc_key"] = enc_key["value"]
-    LOGIN_INFO["refererURL"] = refererURL["value"]
+LOGIN_INFO["enc_key"] = enc_key["value"]
+LOGIN_INFO["refererURL"] = refererURL["value"]
 
-    login_req = s.post('https://www.kidkids.net/regist/login_ck_file.php', data=LOGIN_INFO)
-    if login_req.status_code == 200:
-        print("OK")
+login_req = s.post('https://www.kidkids.net/regist/login_ck_file.php', data=LOGIN_INFO)
+if login_req.status_code == 200:
+    print("OK")
 
-# ------------------------------------------------------------------------------------------------
+for Day in month_day:
+    D = Day
+    file_name = "./output/" + str(Y)+"-"+str(M)+"-"+str(D)+".txt"
+    f = open(file_name, "w")
+    print(file_name)
+
+    base_string =  "http://www.kidkids.net/eduinfo_new/eduplan_day.htm?"
+    age_string = "CUR_AGE="+str(Age)+"&"
+    y_string = "SEL_YEAR="+str(Y)+"&"
+    m_string = "CUR_MONTH="+str(M)+"&"
+    d_string = "CUR_DAY="+str(D)+"&"
+
+    # ------------------------------------------------------------------------------------------------
 
     impormation_URL = base_string + age_string + y_string + m_string + d_string
     second_page = s.get(impormation_URL)
@@ -64,240 +80,136 @@ with requests.Session() as s:
         contents = str(process.find("td").get_text()).replace("\t","").replace("\n","").replace("\r",", ")
         Header.append([title, contents])
 
+    for write_file in Header:
+        write_sen = str(write_file[0]) + " : " + str(write_file[1]) + "\n"
+        f.write(write_sen)
+
 #--------------------------------------------------------------------------------------------------------------
 
     main_parser = str(bs(str(soup_scd.find("table", attrs={"class": "plan_table mgtop_low"})), 'html.parser').find("tbody", class_="th_normal"))
     line_split = main_parser.split("\n")
     line_list = []
 
+    if str(main_parser).find("준비중 입니다.") != -1:
+        f.close()
+        continue
+
     for readline in line_split:
         if (readline.find("<th ") == 0) or (readline.find("<h4 ") == 0):
             readline = readline.replace('<h4 style="margin-bottom:5px;">' , '')
             line_list.append(readline)
 
-    front = line_list[0].find("</th>") 
-    back_string = "<th "
-    space = " "
-    locate = 0
-
-    for space_num in range(10):
-        locate = line_list[0].find(">" + back_string)
-        if locate != -1:
-            break
-        back_string = space + back_string
-
-    rtn = (">" + back_string).replace("th ","")
-
-    for value in line_list:
-        INDEX = line_list.index(value)
-
-        if value.find(rtn) == -1:
+    TOTAL = []
+    for readline in line_list:
+        ready_parser = bs(readline, 'html.parser')
+        if ready_parser == None:
+            TOTAL.append(readline)
             continue
-        tmp = value.split(rtn)
-        del line_list[INDEX]
-        line_list.insert(INDEX, tmp[0]+">")
-        line_list.insert(INDEX+1, "<"+tmp[1])
-
-    for ii in line_list:        
-        A = bs(ii,'html.parser')
-        A.
-    
-
-
-
-    '''
-                readlines = readline.split('> <')
-            if len(readlines) == 2:
-                line_list.append(readlines[0] + ">")
-                line_list.append("<" + readlines[1])
-            elif len(readlines) == 1:
-                line_list.append(readline)
-    '''
-    
-
-
-    
-
-
-
-
-'''
-
-main_parser = bs(main_parser, 'html.parser')
-
-    root = main_parser.find("th", class_="left_none")
-    week_root = None
-    week_week_root = None
-
-    past = None
-    present = None
-
-    present = root
-
-    if present.find_next("th").get('class') == None:
-        print("소주제")
-        week_root = present.find_next("th")
-        past = present
-        present = week_root
-    else:
-        print("주제")
-        root = present.find_next("th")
-        past = present
-        present = root
-        continue
-    
-    if present.find_next()
-    
-    print(root.find_next("h4"))
-
-    first = bs(main_parser,'html.parser').find("th", class_="left_none")
-    first_span = first.get('rowspan')
-
-    tmp = first.find_next("th")
-    while True:
-        if tmp.get('class') != None:
-            break
-        tmp_num = tmp.get('rowspan')
-        if tmp_num == 1:
-            pass
-
-    print(first.find_next("th").get('rowspan'))
-    print(first.find_next("h4").get_text())
-
-
-
-
-
-'''
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-
-    main_bs = bs(main_parser, 'html.parser')
-    Main_list = main_bs.find_all("tr")
-    main_num = len(Main_list) + 1
-    Main = []
-
-    gubun = 0
-    young = 0
-
-    gubun_list = []
-    young_list = []
-    address_list = []
-
-    past = 0
-    present = 0
-
-    for paragraph, cnt in zip(Main_list, range(main_num)):
-        
-        if cnt == 0:
+        LIST = ready_parser.find_all("th")
+        if len(LIST) <= 1:
+            TOTAL.append(readline)
             continue
+        for JJ in LIST:
+            TOTAL.append(JJ)
 
-        needs = bs(str(paragraph), 'html.parser')
+    root = None
+    weak_root = None
+    w_weak_root = []
+    root_colspan = None
+    weak_root_rowspan = 0
 
-        th = needs.find_all('th')
-        th_num = len(th)
+    total = []
+    object = []
 
-        h4 = needs.find_all('h4', style="margin-bottom:5px;")
-        for h4_indi in h4:
-            a = bs(str(h4_indi),'html.parser').find('a')
-            a_address = a.get('href')
-            a_text = a.get_text()
-            #print(a_text)
-            #print(a_address)
-        #a_num = len(a)
+    for ii in TOTAL:
+        A = bs(str(ii), 'html.parser')
 
-        print("th_num: {}".format(th_num))
+        if weak_root_rowspan <= len(w_weak_root):
+            w_weak_root = []
+        if A.find("th", class_="left_none") != None:
+            root_colspan = A.find("th", class_="left_none").get('colspan')
+            if root_colspan != None:
+                weak_root_rowspan = int(A.find("th", class_="left_none").get('rowspan'))
+                weak_root = None
+            root = A.find("th", class_="left_none").get_text()
+        elif A.find("th", class_=False) != None and root_colspan == None:
+            weak_root_rowspan = int(A.find("th", class_=False).get('rowspan'))
+            weak_root = A.find("th", class_=False).get_text()
+        elif A.find("a") != None:
+            list_num = len(w_weak_root)
+            if list_num < weak_root_rowspan:
+                hab = []
+                hab.append(A.find("a").get_text())
+                address = "http://www.kidkids.net" + str(A.find("a").get("href"))
 
+                third_page = s.get(address)
+                html_thd = third_page.content
+                soup_thd = bs(html_thd, 'html.parser')
+                panel = soup_thd.find("table", class_="ep_info actdetail")
 
-        #print("a_num: {}".format(a_num))
+                TH = []
+                TD = []
 
+                th = bs(str(panel), 'html.parser').find_all("th")
+                td = bs(str(panel), 'html.parser').find_all("td")
+                for i in range(len(th)):
+                    if str(th[i].get_text()).find("활동자료") != -1:
+                        continue
+                    TH.append(th[i].get_text())
+                    TD.append(td[i].get_text())
 
-'''
+                hab.append(TH)
+                hab.append(TD)
 
+                w_weak_root.append(hab)
 
+            if len(w_weak_root) == weak_root_rowspan:
+                object = [root, weak_root, w_weak_root]
+                total.append(object)
 
+    f.write("\n")
 
+    Loot = str(total[0][0]) + "\n"
+    f.write(Loot)
 
+    if total[0][1] != None:
+        w_Loot = "\t" + str(total[0][1]) + "\n"
+        f.write(w_Loot)
 
-'''
-        process = bs(str(paragraph), 'html.parser')
-        start_level_list = process.find_all("th")
-        b_parser = bs(str(process.find("h4")), 'html.parser').find("a")
+    w_w_Loot = total[0][2]
+    SENTENSE = []
+    for zz in w_w_Loot:
+        for asd in range(len(zz[2])):
+            zz[2][asd] = zz[2][asd].replace("\r","").replace("\n","")
+        sentense = "\t\t" + str(zz[0]) + "\n"
+        f.write(sentense)
+        for NI in range(len(zz[1])):
+            f.write("\t\t\t" + str(zz[1][NI]) + "  :  " + str(zz[2][NI]) + "\n")
+        SENTENSE = []
 
-        for parser in start_level_list:
-            One = bs(str(parser), 'html.parser')
-            if One.find(class_=True) != None:
-                gubun_list.append(One.get_text())
-                gubun += 1
+    f.write("\n")
 
-                young = 0
-                tmp = []
+    for iiii in range(1,len(total)):
+        compare = str(total[iiii][0]) + "\n"
+        if compare != Loot:
+            Loot = str(total[iiii][0]) + "\n"
+            f.write(Loot)
 
-                try:
-                    young_list.append(tmp)
-                except NameError:
-                    pass
-            else:
-                tmp.append(One.get_text())
-                young += 1
+        if total[iiii][1] != None:
+            w_Loot = "\t" + str(total[iiii][1]) + "\n"
+            f.write(w_Loot)
 
-        print("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz")
-        print("구분 : {}".format(gubun))
-        print("영역 : {}".format(young))
-        A = b_parser.get_text()
-        B = "http://www.kidkids.net" + str(b_parser.get("href"))
-        print(A)
-        print("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz")
+        w_w_Loot = total[iiii][2]
+        SENTENSE = []
+        for zz in w_w_Loot:
+            for asd in range(len(zz[2])):
+                zz[2][asd] = zz[2][asd].replace("\r", "").replace("\n", "")
+            sentense = "\t\t" + str(zz[0]) + "\n"
+            f.write(sentense)
+            for NI in range(len(zz[1])):
+                f.write("\t\t\t" + str(zz[1][NI]) + "  :  " + str(zz[2][NI]) + "\n")
+            SENTENSE = []
 
-        if (gubun == 1) and (young == 1):
-            tmp_2 = []
-            
-        try:
-            tmp_2.append([A])
-            print(tmp_2)
-        except:
-            pass
+        f.write("\n")
 
-        if (young == 1) or (young == 0):
-            try:
-                address_list.append(tmp_2)
-                tmp_2 = []
-            except NameError:
-                pass
-
-
-
-
-
-
-
-
-
-#print(gubun_list)
-#print(young_list)
-print(address_list)
-
-'''
+    f.close()
